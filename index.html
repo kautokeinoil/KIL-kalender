@@ -1,0 +1,121 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red255\green255\blue255;\red140\green232\blue80;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c1\c1;\cssrgb\c100000\c100000\c100000\c0;\cssrgb\c60541\c91094\c38317;
+}
+\paperw11900\paperh16840\margl1440\margr1440\vieww32140\viewh16320\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!doctype html>\
+<html lang="no">\
+<head>\
+<meta charset="utf-8">\
+<meta name="viewport" content="width=device-width, initial-scale=1">\
+<title>KIL kalendere</title>\
+<style>html,body\{margin:0;padding:0;background:#fff;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;\}</style>\
+</head>\
+<body>\
+<!-- ============================================================\
+     KIL KALENDER-WIDGET \'96 4 knapper, \'e9n kalender om gangen\
+     Ingen JavaScript \'96 fungerer selv om siden fjerner <script>.\
+\
+     SLIK REDIGERER DU:\
+     1) Knappetekst:  endre teksten mellom <label ...> og </label>\
+     2) Kalenderlenke: endre src="..." i hver <iframe>\
+        (bruk "src"-adressen fra Google Kalender sin innbyggingskode,\
+         og kalenderen m\'e5 v\'e6re satt til offentlig)\
+     3) H\'f8yde: endre "height: 600px" under .kilkal-panel iframe\
+     4) Farge: endre #0b4f8a (klubbfarge) nedenfor\
+     ============================================================ -->\
+\
+<div class="kilkal">\
+  <style>\
+    .kilkal \{ font-family: inherit; max-width: 100%; \}\
+    .kilkal input[type="radio"] \{ position: absolute; opacity: 0; pointer-events: none; \}\
+\
+    .kilkal-knapper \{ display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; \}\
+    .kilkal-knapper label \{\
+      flex: 1 1 140px;\
+      text-align: center;\
+      padding: 10px 14px;\
+      border: 2px solid #0b4f8a;\
+      border-radius: 6px;\
+      background: #fff;\
+      color: #0b4f8a;\
+      font-weight: bold;\
+      cursor: pointer;\
+      user-select: none;\
+      transition: background .15s, color .15s;\
+    \}\
+    .kilkal-knapper label:hover \{ background: #eef3f9; \}\
+\
+    .kilkal-panel \{ display: none; \}\
+    .kilkal-panel iframe \{ width: 100%; height: 600px; border: 0; display: block; \}\
+\
+    /* Aktiv knapp + vis riktig kalender */\
+    #kilkal-1:checked ~ .kilkal-knapper label[for="kilkal-1"],\
+    #kilkal-2:checked ~ .kilkal-knapper label[for="kilkal-2"],\
+    #kilkal-3:checked ~ .kilkal-knapper label[for="kilkal-3"],\
+    #kilkal-4:checked ~ .kilkal-knapper label[for="kilkal-4"] \{ background: #0b4f8a; color: #fff; \}\
+\
+    #kilkal-1:checked ~ .kilkal-paneler .kilkal-p1,\
+    #kilkal-2:checked ~ .kilkal-paneler .kilkal-p2,\
+    #kilkal-3:checked ~ .kilkal-paneler .kilkal-p3,\
+    #kilkal-4:checked ~ .kilkal-paneler .kilkal-p4 \{ display: block; \}\
+\
+    /* Tastaturnavigasjon */\
+    #kilkal-1:focus-visible ~ .kilkal-knapper label[for="kilkal-1"],\
+    #kilkal-2:focus-visible ~ .kilkal-knapper label[for="kilkal-2"],\
+    #kilkal-3:focus-visible ~ .kilkal-knapper label[for="kilkal-3"],\
+    #kilkal-4:focus-visible ~ .kilkal-knapper label[for="kilkal-4"] \{ outline: 3px solid #c8102e; outline-offset: 2px; \}\
+\
+    @media (max-width: 600px) \{\
+      .kilkal-panel iframe \{ height: 500px; \}\
+    \}\
+  </style>\
+\
+  <input type="radio" name="kilkal" id="kilkal-1" checked>\
+  <input type="radio" name="kilkal" id="kilkal-2">\
+  <input type="radio" name="kilkal" id="kilkal-3">\
+  <input type="radio" name="kilkal" id="kilkal-4">\
+\
+  <!-- KNAPPER: endre teksten her -->\
+  <div class="kilkal-knapper">\
+    <label for="kilkal-1">B\'e1kteh\'e1rji</label>\
+    <label for="kilkal-2">Barneskolen</label>\
+    <label for="kilkal-3">Gressbane</label>\
+    <label for="kilkal-4">S\'e1ttomaras</label>\
+  </div>\
+\
+  <!-- KALENDERE: lim inn src-lenkene her, i samme rekkef\'f8lge som knappene -->\
+  <div class="kilkal-paneler">\
+    <div class="kilkal-panel kilkal-p1">\
+      <iframe src="https://calendar.google.com/calendar/embed?src=
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+b3J0a2dmNnFidDY1ZHFldml1cDZxYTI5Y3JpZ2IwZ2dAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&
+\f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 ctz=Europe%2FOslo&hl=no&wkst=2&showCalendars=0&showTz=0&showPrint=0" title="Kalender 1" loading="lazy"></iframe>\
+    </div>\
+    <div class="kilkal-panel kilkal-p2">\
+      <iframe src="https://calendar.google.com/calendar/embed?src=
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+c2ttdTN0MzB1M2pqcWRjZW9lcG5xdG85YnJ2b2hjcGZAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&
+\f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 ctz=Europe%2FOslo&hl=no&wkst=2&showCalendars=0&showTz=0&showPrint=0" title="Kalender 2" loading="lazy"></iframe>\
+    </div>\
+    <div class="kilkal-panel kilkal-p3">\
+      <iframe src="https://calendar.google.com/calendar/embed?src=
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+bWxyN3VsMW5ocXJwaDFoaTRiaDRvOXFwaXBwbjA0bHJAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&
+\f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 ctz=Europe%2FOslo&hl=no&wkst=2&showCalendars=0&showTz=0&showPrint=0" title="Kalender 3" loading="lazy"></iframe>\
+    </div>\
+    <div class="kilkal-panel kilkal-p4">\
+      <iframe src="https://calendar.google.com/calendar/embed?src=
+\f1 \cf2 \cb3 \expnd0\expndtw0\kerning0
+Z285cGt0b2ZxMGlhZDdpc3A1MTc2ZXBuMjVqYW9vYzVAaW1wb3J0LmNhbGVuZGFyLmdvb2dsZS5jb20&
+\f0 \cf0 \cb1 \kerning1\expnd0\expndtw0 ctz=Europe%2FOslo&hl=no&wkst=2&showCalendars=0&showTz=0&showPrint=0" title="Kalender 4" loading="lazy"></iframe>\
+    </div>\
+  </div>\
+</div>\
+\
+</body>\
+</html>}
